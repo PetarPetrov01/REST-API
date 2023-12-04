@@ -1,5 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
+require('dotenv').config();
 
 const cors = require('./middlewares/cors');
 const session = require('./middlewares/session');
@@ -10,11 +11,13 @@ const userController = require('./controllers/userController');
 const propertyController = require('./controllers/propertyController');
 const profileController = require('./controllers/profileController');
 
-const connectionString = 'mongodb://localhost:27017/luxliving';
+const connectionString = process.env.DATABASE_URL || 'mongodb://localhost:27017/luxliving';
 start();
 
+
 async function start() {
-    await mongoose.connect(connectionString);
+    const conn = await mongoose.connect(connectionString);
+    console.log(conn.connection.host);
     console.log('Connected to database');
 
     const app = express();

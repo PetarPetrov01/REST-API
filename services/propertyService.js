@@ -105,6 +105,9 @@ async function bid(id, userId, newPrice) {
 }
 
 async function deleteProperty(id) {
+    const property = Property.findById(id);
+
+    property.reviews.forEach(r => Review.findByIdAndDelete(r));
     return Property.findByIdAndDelete(id);
 }
 
