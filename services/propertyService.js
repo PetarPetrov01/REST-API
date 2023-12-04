@@ -90,8 +90,8 @@ async function updateProperty(id, data) {
 async function bid(id, userId, newPrice) {
     const property = await Property.findById(id);
 
-    if (property.price != newPrice) {
-        throw new Error('You can\'t edit the price, once a bid is placed!');
+    if (property.price > newPrice) {
+        throw new Error('You can\'t place a lower bid!');
     }
 
     if (property._ownerId == userId) {
