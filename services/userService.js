@@ -2,7 +2,7 @@ const User = require('../models/User');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
 
-const secret = 'sadio21oijdasd';
+const secret = process.env.JWT_SECRET || 'sadio21oijdasd';
 
 const tokenBlacklist = new Set();
 
