@@ -26,7 +26,7 @@ async function login(email, password) {
         throw new Error('Incorrect username or password');
     }
 
-    const match = bcrypt.compare(password, user.hashedPassword);
+    const match = await bcrypt.compare(password, user.hashedPassword);
     if (!match) {
         throw new Error('Incorrect username or password');
     }
