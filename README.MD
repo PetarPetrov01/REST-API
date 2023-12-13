@@ -16,7 +16,14 @@
 This document provides details about the REST API endpoints exposed by the Property Service. The service allows users to create their own profile,manage properties, place bids, create reviews and retrieve property information.
 
 ## Getting started
-
+To run the server you would first need to clone the repository:
+```bash
+git clone https://github.com/PetarPetrov01/REST-API
+```
+After that you need to navigate to the repo and install all dependencies:
+```bash
+npm install
+```
 To get started, you need to change directory to /server and run:
 ```bash
 npm start
@@ -26,17 +33,6 @@ When the server starts successfully, it outputs the following message to the con
 'Connected to database
 Server started on 3030'
 
-### Error Responses
-
-If there is an error processing a request, the API will respond with an appropriate HTTP status code and a JSON object containing an error message.
-
-Example error response:
-
-```json
-{
-  "message": "Invalid request, missing required parameter."
-}
-```
 ## Authorized request 
 
 To access some of the endpoints (e.g. creating and managing posts, placing a bid), authentication is required. Users need to include a valid JWT token in the authorization header of their HTTP requests.
@@ -91,6 +87,18 @@ The service responds with the object similar to what is found in the [registrati
 
 ### Logout
 To logout the current user, send an authorized `GET` request to `/users/logout`. The service blakclists the token and responds with 204 - No Content.
+
+### Error Responses
+
+If there is an error processing a request, the API will respond with an appropriate HTTP status code and a JSON object containing an error message.
+
+Example error response:
+
+```json
+{
+  "message": "Invalid request, missing required parameter."
+}
+```
 
 ### Property service
 The base url for accessing the properties is `/data/catalog`
