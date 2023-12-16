@@ -16,15 +16,18 @@
 This document provides details about the REST API endpoints exposed by the Property Service. The service allows users to create their own profile,manage properties, place bids, create reviews and retrieve property information.
 
 ## Getting started
-To run the server you would first need to clone the repository:
+To run the server successfully, ensure that MongoDB is installed on your machine. If you haven't installed MongoDB yet, you can download it from the official website.
+
+Once MongoDB is installed, follow these steps to start the server:
+Clone the repository:
 ```bash
 git clone https://github.com/PetarPetrov01/REST-API
 ```
-After that you need to navigate to the repo and install all dependencies:
+Install all dependencies:
 ```bash
 npm install
 ```
-To get started, you need to change directory to /server and run:
+Change directory to the root of the server and run:
 ```bash
 npm start
 ```
