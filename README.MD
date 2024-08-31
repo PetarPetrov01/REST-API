@@ -1,6 +1,11 @@
 # Property Service REST API Documentation
+
+This document provides details about the REST API endpoints exposed by the Property Service. The primary purpose of this service is to function as the REST API for the [LuxLiving application](https://github.com/PetarPetrov01/LuxLiving), enabling users to create profiles, manage properties, place bids, create reviews, and retrieve property information.
+
+
 |Contents
 | ---
+| [Getting started](#getting-started)
 | [Authentication](#authorized-request)
 | - [Register](#register)
 | - [Login](#login)
@@ -12,8 +17,6 @@
 | - [Edit](#edit-property)
 | - [Delete](#delete-property)
 | [Reviews](#rev)
-
-This document provides details about the REST API endpoints exposed by the Property Service. The service allows users to create their own profile,manage properties, place bids, create reviews and retrieve property information.
 
 ## Getting started
 To run the server successfully, ensure that MongoDB is installed on your machine. If you haven't installed MongoDB yet, you can download it from the official website.
